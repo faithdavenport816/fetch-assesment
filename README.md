@@ -14,3 +14,9 @@ I composed SQL (BigQuery syntax) to identify data quality issues with the provid
 * [Users](https://github.com/faithdavenport816/fetch-assesment/blob/main/data_quality_assesment/users_assesment.sql)
 * [Brands](https://github.com/faithdavenport816/fetch-assesment/blob/main/data_quality_assesment/brands_assesment.sql)
 * [Receipts](https://github.com/faithdavenport816/fetch-assesment/blob/main/data_quality_assesment/receipts_assesment.sql)
+
+### Prompt #4: Stakeholder Email
+* Stakeholder email can be found [here](https://github.com/faithdavenport816/fetch-assesment/blob/main/stakeholder_email.md).
+
+### Additional Notes
+* For ease of querying, I wrote a [python script](https://github.com/faithdavenport816/fetch-assesment/blob/main/load-and-parse/convert_to_csvs.py) to clean and load my data to BigQuery.
