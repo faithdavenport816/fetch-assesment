@@ -45,11 +45,12 @@ def convert_to_csv(file):
 
     # strip out the special character $, for ease of loading to BQ
     df.columns = [col.replace('$', '_') for col in df.columns]
-    # for purposes of this exercise, remove the cpg column and rewardsReceiptItemList
-    df = df.drop([col for col in ['cpg', 'rewardsReceiptItemList'] if col in df.columns], axis=1, errors='ignore')
+    # for purposes of this exercise, remove the cpg column
+    df = df.drop([col for col in ['cpg'] if col in df.columns], axis=1, errors='ignore')
 
     # Upload DataFrame to BigQuery
-    job = client.load_table_from_dataframe(df, table_full_id)
+    job_config = bigquery.LoadJobConfig(write_disposition="WRITE_TRUNCATE")
+    job = client.load_table_from_dataframe(df, table_full_id, job_config=job_config)
     job.result()
     print(f"Successfully loaded {df.shape[0]} rows into {table_full_id}.")
 
