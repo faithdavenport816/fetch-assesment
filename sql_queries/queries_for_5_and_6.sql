@@ -1,3 +1,4 @@
+-- SQL SYNTAX: BIGQUERY
 -- This query will output the top brands for total spend and total transactions among users who were created in the past 6 months.
 with 
     users_created_last_six as (
