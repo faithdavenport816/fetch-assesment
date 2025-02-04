@@ -12,3 +12,6 @@ select * from sandbox.users where createdDate > lastLogin;
 
 -- NON-ISSUE: dates within a reasonable range
 select min(createdDate), max(createdDate), min(lastLogin), max(lastLogin) from sandbox.users;
+
+-- NON-ISSUE: bool only equal to true / false
+select active, count(*) from sandbox.users group by 1
